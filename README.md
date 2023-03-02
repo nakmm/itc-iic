@@ -26,8 +26,8 @@ xschem
 
 ## test_invのあそびかた
 レイアウトへ移行する前に、LVSのためのネットリストを作成しておく必要があります。
-xschemでtest_inv.schを開いた後、上のメニュー ```Simulation > LVS netlist: Top level is a .subckt``` をクリックしてチェックがついている状態である必要があります。
-チェックが付いた事を確認して、Netlistを押してネットリストを出力してください。押したら、xschemを閉じてください。
+xschemでtest_inv.schを開いた後、上のメニュー ```Simulation > LVS netlist: Top level is a .subckt``` をクリックし、チェックがついているか確認してください。
+そしたらNetlistを押してネットリストを出力し、xschemを閉じてください。
 
 レイアウトはklayoutを使用します。起動方法は
 ```
@@ -38,6 +38,7 @@ klayout
 sky130 PDKメニューからDRC、LVS、PEXが実行できます。各種ネットリストはGDSファイルと同じフォルダに生成されます。
 DRCが３つありますが、それぞれ見ているルールが微妙に異なります。
 例えば今回の場合、Klayout DRC (Caravel) では通りますが、 Magic DRC, Klayout DRC (Full)では違反となります。
+（演習でどのルールを採用するかは未定です）
 
-LVSは２つありますが、Magic LVSの結果を信用してください。
-（Klayout LVSはサブストレートのネット名がGND固定です）
+LVSは２つありますが、原則としてMagic LVSの結果を信用してください。
+（Klayout LVSはサブストレートのネット名がGND固定なので、合っているのにエラーが出る可能性があります）
